@@ -138,7 +138,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `Video_Club`.`Copies` (
   `Id_Copy` INT NOT NULL AUTO_INCREMENT,
   `Is_rent` TINYINT NOT NULL,
-  `Copiescol` VARCHAR(45) NULL,
   `Films_Id` INT NOT NULL,
   `Store_Id` INT NOT NULL,
   PRIMARY KEY (`Id_Copy`, `Films_Id`, `Store_Id`),
@@ -196,18 +195,18 @@ ENGINE = InnoDB;
 -- Table `Video_Club`.`Actor_Film`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Video_Club`.`Actor_Film` (
-  `Actors_Id_Actors` INT NOT NULL,
-  `Films_Id_Films` INT NOT NULL,
-  PRIMARY KEY (`Actors_Id_Actors`, `Films_Id_Films`),
-  INDEX `fk_Actors_has_Films_Films1_idx` (`Films_Id_Films` ASC) VISIBLE,
-  INDEX `fk_Actors_has_Films_Actors1_idx` (`Actors_Id_Actors` ASC) VISIBLE,
+  `Actors_Id` INT NOT NULL,
+  `Films_Id` INT NOT NULL,
+  PRIMARY KEY (`Actors_Id`, `Films_Id`),
+  INDEX `fk_Actors_has_Films_Films1_idx` (`Films_Id` ASC) VISIBLE,
+  INDEX `fk_Actors_has_Films_Actors1_idx` (`Actors_Id` ASC) VISIBLE,
   CONSTRAINT `fk_Actors_has_Films_Actors1`
-    FOREIGN KEY (`Actors_Id_Actors`)
+    FOREIGN KEY (`Actors_Id`)
     REFERENCES `Video_Club`.`Actors` (`Id_Actors`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Actors_has_Films_Films1`
-    FOREIGN KEY (`Films_Id_Films`)
+    FOREIGN KEY (`Films_Id`)
     REFERENCES `Video_Club`.`Films` (`Id_Films`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
