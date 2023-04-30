@@ -68,10 +68,10 @@ ENGINE = InnoDB;
 -- Table `Video_Club`.`Languages`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Video_Club`.`Languages` (
-  `ID_Languages` INT NOT NULL AUTO_INCREMENT,
+  `Id_Languages` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(20) NOT NULL,
-  PRIMARY KEY (`ID_Languages`),
-  UNIQUE INDEX `ID_Languages_UNIQUE` (`ID_Languages` ASC) VISIBLE,
+  PRIMARY KEY (`Id_Languages`),
+  UNIQUE INDEX `ID_Languages_UNIQUE` (`Id_Languages` ASC) VISIBLE,
   UNIQUE INDEX `Name_UNIQUE` (`Name` ASC) VISIBLE)
 ENGINE = InnoDB;
 
@@ -92,7 +92,7 @@ CREATE TABLE IF NOT EXISTS `Video_Club`.`Films_Original` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Films_has_Languages_Languages1`
     FOREIGN KEY (`Languages_Id`)
-    REFERENCES `Video_Club`.`Languages` (`ID_Languages`)
+    REFERENCES `Video_Club`.`Languages` (`Id_Languages`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS `Video_Club`.`Films_Languages` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Films_has_Languages1_Languages1`
     FOREIGN KEY (`Languages_Id`)
-    REFERENCES `Video_Club`.`Languages` (`ID_Languages`)
+    REFERENCES `Video_Club`.`Languages` (`Id_Languages`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -218,15 +218,15 @@ ENGINE = InnoDB;
 -- Table `Video_Club`.`Employees`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Video_Club`.`Employees` (
-  `id_Employee` INT NOT NULL AUTO_INCREMENT,
+  `Id_Employee` INT NOT NULL AUTO_INCREMENT,
   `Name` VARCHAR(45) NOT NULL,
   `Last_name` VARCHAR(45) NOT NULL,
   `Adress` VARCHAR(80) NOT NULL,
   `Postal_code` VARCHAR(45) NOT NULL,
   `Document_Id` VARCHAR(20) NOT NULL,
   `Store_Id` INT NOT NULL,
-  PRIMARY KEY (`id_Employee`, `Store_Id`),
-  UNIQUE INDEX `id_Employee_UNIQUE` (`id_Employee` ASC) VISIBLE,
+  PRIMARY KEY (`Id_Employee`, `Store_Id`),
+  UNIQUE INDEX `id_Employee_UNIQUE` (`Id_Employee` ASC) VISIBLE,
   UNIQUE INDEX `Document_Id_UNIQUE` (`Document_Id` ASC) VISIBLE,
   INDEX `fk_Employees_Stores1_idx` (`Store_Id` ASC) VISIBLE,
   CONSTRAINT `fk_Employees_Stores1`
@@ -245,6 +245,7 @@ CREATE TABLE IF NOT EXISTS `Video_Club`.`Customers` (
   `Name` VARCHAR(45) NOT NULL,
   `Last_name` VARCHAR(45) NOT NULL,
   `Adress` VARCHAR(80) NOT NULL,
+  `Postal_code` VARCHAR(45) NOT NULL,
   `Document_Id` VARCHAR(20) NOT NULL,
   PRIMARY KEY (`Id_Customer`),
   UNIQUE INDEX `Id_Customer_UNIQUE` (`Id_Customer` ASC) VISIBLE,
@@ -256,14 +257,14 @@ ENGINE = InnoDB;
 -- Table `Video_Club`.`Rent`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Video_Club`.`Rent` (
-  `ID_Rent` INT NOT NULL AUTO_INCREMENT,
+  `Id_Rent` INT NOT NULL AUTO_INCREMENT,
   `Customers_Id` INT NOT NULL,
   `Copy_Id` INT NOT NULL,
   `Rental_date` DATETIME NOT NULL,
   `Expired_date` DATETIME NULL,
   `Employee_Id` INT NOT NULL,
-  PRIMARY KEY (`ID_Rent`, `Customers_Id`, `Copy_Id`, `Employee_Id`),
-  UNIQUE INDEX `ID_Rent_UNIQUE` (`ID_Rent` ASC) VISIBLE,
+  PRIMARY KEY (`Id_Rent`, `Customers_Id`, `Copy_Id`, `Employee_Id`),
+  UNIQUE INDEX `ID_Rent_UNIQUE` (`Id_Rent` ASC) VISIBLE,
   INDEX `fk_Rent_Copies1_idx` (`Copy_Id` ASC) VISIBLE,
   INDEX `fk_Rent_Employees1_idx` (`Employee_Id` ASC) VISIBLE,
   INDEX `fk_Rent_Customers1_idx` (`Customers_Id` ASC) VISIBLE,
@@ -274,7 +275,7 @@ CREATE TABLE IF NOT EXISTS `Video_Club`.`Rent` (
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Rent_Employees1`
     FOREIGN KEY (`Employee_Id`)
-    REFERENCES `Video_Club`.`Employees` (`id_Employee`)
+    REFERENCES `Video_Club`.`Employees` (`Id_Employee`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Rent_Customers1`

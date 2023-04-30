@@ -55,3 +55,15 @@ def cols_info(df: pd.DataFrame) -> pd.DataFrame:
 
     # Devolvemos únicamente que tengan algún valor distinto de cero
     return df.loc[:, (df != 0).any()]
+
+
+def new_customer_id(_id_old, cust):
+    """
+    Función que convierte el antiguo customer_id al nuevo valor de la nueva
+    DB
+    """
+    def get_id(serie):
+        return serie[-1]
+    # list_id serie cuyos indices es el nuevo id y valores old_id
+    list_id = cust.Name.str.split('_').apply(get_id).apply(np.int16)
+    return list_id.index[list_id == _id_old][0] + 1
