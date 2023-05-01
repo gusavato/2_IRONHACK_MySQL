@@ -1,2 +1,9 @@
-# 2_IRONHACK_MySQL
-Segundo proyecto del bootcamp Data Analytics de IRONHACK consistente en la creación de una BBDD a paritr de varios ficheros .csv
+# IRONHACK_MySQL
+
+![portada](.images/VHS.png)
+
+1.[✍️ Descripción](#descripción)\
+2.[🤓 Análisis general y limpieza](#análisis)\
+3.[🗂️ Database](#database)\
+4.[🧬 Transformación](#transformación)\
+5.[📊 BONUS: Consultas](#consultas)
