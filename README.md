@@ -56,9 +56,12 @@ root
 |__ images/         # Contiene la imágenes que se han usado en el proyecto   
 |
 |__ jupyter         # Contiene Clean_and_upload.ipynb donde se puede ver todo el proceso de construcción de la base de datos
+|   |__ src/        # Contiene video_func.py (archivo de funciones usadas en la cración de la base de datos)
 |
-|__ .gitignore                    # archivo gitignore     
+|__ SQL/            # Contiene los archivos necesarios para crear la base de datos
 |
-|__ README.md                     # información del proyecto
+|__ .gitignore      # Archivo gitignore     
+|
+|__ README.md       # Descripción del proyecto
 
 ```
