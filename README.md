@@ -9,7 +9,6 @@
 2.[🗒️ Premisas](#premisas)\
 3.[💾 Database](#database)\
 4.[📁 Estructura](#Estructura)\
-5.[📊 BONUS: Consultas](#consultas)
 
 
 ## Descripción:<a name="descripcion"/>
@@ -45,23 +44,25 @@ El esquema de la base de datos es el siguiente:
     <img src="./images/DBVC.png" alt="portada">
 </div>
 
-## Estructura:
+## Estructura:<a name="Estructura"/>
 
 ```
 root 
 |__ data/                           
-|   |__ clean/      # Archivos .csv resultantes del proceso de limpieza
-|   |__ raw/        # Archivos .csv de donde partimos 
+|   |__ clean/          # Archivos .csv resultantes del proceso de limpieza
+|   |__ raw/            # Archivos .csv de donde partimos 
 |
-|__ images/         # Contiene la imágenes que se han usado en el proyecto   
+|__ images/             # Contiene la imágenes que se han usado en el proyecto   
 |
-|__ jupyter         # Contiene Clean_and_upload.ipynb donde se puede ver todo el proceso de construcción de la base de datos
-|   |__ src/        # Contiene video_func.py (archivo de funciones usadas en la cración de la base de datos)
+|__ jupyter/            # Contiene Clean_and_upload.ipynb donde se puede ver todo el proceso de construcción de la base de datos
+|   |__ src/            # Contiene video_func.py (archivo de funciones usadas en la cración de la base de datos)
 |
-|__ SQL/            # Contiene los archivos necesarios para crear la base de datos
+|__ SQL/                # Contiene los archivos necesarios para crear la base de datos
 |
-|__ .gitignore      # Archivo gitignore     
+|__ .gitignore          # Archivo gitignore     
 |
-|__ README.md       # Descripción del proyecto
+|__ README.md           # Descripción del proyecto
+|
+|__ requirements.txt    # Versiones de las librerías usadas en el proyecto
 
 ```
