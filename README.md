@@ -1,6 +1,6 @@
 # IRONHACK_MySQL
 
-![portada](.images/VHS.png)
+![portada](./images/VHS.png)
 
 1.[✍️ Descripción](#descripción)\
 2.[🤓 Análisis general y limpieza](#análisis)\
