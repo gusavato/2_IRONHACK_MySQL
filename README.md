@@ -7,8 +7,8 @@
 ## Indice:
 1.[✍️ Descripción](#descripcion)\
 2.[🗒️ Premisas](#premisas)\
-3.[🗂️ Database](#database)\
-4.[🧬 Transformación](#transformación)\
+3.[💾 Database](#database)\
+4.[📁 Estructura](#Estructura)\
 5.[📊 BONUS: Consultas](#consultas)
 
 
@@ -36,3 +36,29 @@ A la hora de crear la base de datos seguiremos las siguientes pautas:
 - Un alquiler sólo puede ser creado por un empleado
 
 - Crearemos una tabla de directores aunque esta esté vacía
+
+## Database: <a name="database"/>
+
+El esquema de la base de datos es el siguiente:
+
+<div style="text-align:center">
+    <img src="./images/DBVC.png" alt="portada">
+</div>
+
+## Estructura:
+
+```
+root 
+|__ data/                           
+|   |__ clean/      # Archivos .csv resultantes del proceso de limpieza
+|   |__ raw/        # Archivos .csv de donde partimos 
+|
+|__ images/         # Contiene la imágenes que se han usado en el proyecto   
+|
+|__ jupyter         # Contiene Clean_and_upload.ipynb donde se puede ver todo el proceso de construcción de la base de datos
+|
+|__ .gitignore                    # archivo gitignore     
+|
+|__ README.md                     # información del proyecto
+
+```
